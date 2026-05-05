@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personal Portfolio — Web Developer & Machine Learning</title>
+  <title>Portfolio</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -31,137 +31,31 @@
       }
     }
   </script>
-
-  <style>
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      color: #0B1020;
-      background:
-        radial-gradient(circle at 14% 8%, rgba(183,255,60,.18), transparent 24%),
-        radial-gradient(circle at 86% 10%, rgba(231,249,255,.85), transparent 26%),
-        linear-gradient(180deg, #fff 0%, #F6F7FB 55%, #fff 100%);
-      transition: background .35s ease, color .35s ease;
-    }
-
-    .dark body {
-      color: #F8FAFC;
-      background:
-        radial-gradient(circle at 14% 8%, rgba(183,255,60,.10), transparent 24%),
-        radial-gradient(circle at 86% 10%, rgba(91,141,255,.12), transparent 26%),
-        linear-gradient(180deg, #05070D 0%, #0B1020 55%, #05070D 100%);
-    }
-
-    .noise::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: 80;
-      pointer-events: none;
-      opacity: .04;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    }
-
-    .glass {
-      background: rgba(255,255,255,.72);
-      backdrop-filter: blur(18px);
-      border: 1px solid rgba(231,234,241,.9);
-    }
-    .dark .glass { background: rgba(11,16,32,.72); border-color: rgba(255,255,255,.10); }
-
-    .nav-link { position: relative; }
-    .nav-link::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: -11px;
-      width: 0;
-      height: 6px;
-      border-radius: 999px;
-      background: #B7FF3C;
-      transform: translateX(-50%);
-      transition: .28s ease;
-    }
-    .nav-link:hover::after { width: 6px; }
-
-    .theme-toggle .sun { display: none; }
-    .dark .theme-toggle .sun { display: inline; }
-    .dark .theme-toggle .moon { display: none; }
-
-    .typing-cursor { animation: blink .9s steps(1) infinite; }
-    @keyframes blink { 50% { opacity: 0; } }
-
-    .hero-visual-grid {
-      background-image:
-        linear-gradient(rgba(11,16,32,.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(11,16,32,.08) 1px, transparent 1px);
-      background-size: 26px 26px;
-    }
-    .dark .hero-visual-grid {
-      background-image:
-        linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
-    }
-
-    .node { animation: floatNode 5s ease-in-out infinite; }
-    .node:nth-child(2) { animation-delay: .8s; }
-    .node:nth-child(3) { animation-delay: 1.5s; }
-    @keyframes floatNode { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-
-    .tech-card i { filter: grayscale(1); opacity: .38; transition: .28s ease; }
-    .tech-card:hover i { filter: grayscale(0); opacity: 1; transform: translateY(-4px) scale(1.08); }
-    .tech-card:hover { background: rgba(255,255,255,.9); border-color: rgba(11,16,32,.18); }
-    .dark .tech-card:hover { background: rgba(255,255,255,.08); border-color: rgba(183,255,60,.35); }
-
-    .project-card img { transition: .55s cubic-bezier(.2,.8,.2,1); }
-    .project-card:hover img { transform: scale(1.045); }
-    .project-card:hover .project-cover::after { opacity: .72; }
-    .project-cover::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 35%, rgba(11,16,32,.85) 100%);
-      opacity: .58;
-      transition: .3s ease;
-    }
-    .project-actions { transform: translateY(10px); opacity: 0; transition: .3s ease; }
-    .project-card:hover .project-actions { transform: translateY(0); opacity: 1; }
-
-    .cert-card img { transition: .45s ease; }
-    .cert-card:hover img { transform: scale(1.045); }
-    .cert-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(11,16,32,.05) 0%, rgba(11,16,32,.75) 100%);
-      opacity: .72;
-      transition: .28s ease;
-    }
-    .cert-card:hover::after { opacity: .82; }
-
-    .lightbox { opacity: 0; pointer-events: none; transition: .22s ease; }
-    .lightbox.show { opacity: 1; pointer-events: auto; }
-    .lightbox img { transform: scale(.96); transition: .22s ease; }
-    .lightbox.show img { transform: scale(1); }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="noise overflow-x-hidden bg-white text-ink dark:bg-ink dark:text-white">
+    <div class="site-ambient">
+        <div class="ambient-blob blob-1"></div>
+        <div class="ambient-blob blob-2"></div>
+        <div class="ambient-blob blob-3"></div>
+    </div>
+    <div class="ambient-grid"></div>
+
   <header class="fixed left-0 right-0 top-4 z-50 px-4">
     <nav class="glass mx-auto flex max-w-6xl items-center justify-between rounded-[1.6rem] px-3 py-3 shadow-card dark:shadow-darkSoft md:rounded-full md:px-4">
       <a href="#home" class="flex items-center gap-3 pl-1 font-black tracking-[-0.03em]">
         <span class="grid h-9 w-9 place-items-center rounded-xl bg-ink text-acid dark:bg-acid dark:text-ink">A</span>
-        <span class="hidden sm:block">YourName</span>
+        <span class="hidden sm:block">Andhikkad</span>
       </a>
 
-      <div class="hidden items-center rounded-full border border-line bg-white/60 px-5 py-2.5 text-sm font-semibold text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 md:flex md:gap-6">
-        <a class="nav-link hover:text-ink dark:hover:text-white" href="#about">About</a>
-        <a class="nav-link hover:text-ink dark:hover:text-white" href="#skills">Skills</a>
-        <a class="nav-link hover:text-ink dark:hover:text-white" href="#projects">Projects</a>
-        <a class="nav-link hover:text-ink dark:hover:text-white" href="#certificates">Certificates</a>
-        <a class="nav-link hover:text-ink dark:hover:text-white" href="#contact">Contact</a>
-      </div>
+        <div class="hidden items-center gap-7 text-sm font-semibold text-slate-500 dark:text-slate-300 md:flex">
+            <a class="nav-link transition hover:text-ink dark:hover:text-white" href="#about">About</a>
+            <a class="nav-link transition hover:text-ink dark:hover:text-white" href="#skills">Skills</a>
+            <a class="nav-link transition hover:text-ink dark:hover:text-white" href="#projects">Projects</a>
+            <a class="nav-link transition hover:text-ink dark:hover:text-white" href="#certificates">Certificates</a>
+            <a class="nav-link transition hover:text-ink dark:hover:text-white" href="#contact">Contact</a>
+        </div>
 
       <div class="flex items-center gap-2">
         <button id="themeToggle" class="theme-toggle grid h-10 w-10 place-items-center rounded-full border border-line bg-white text-sm transition hover:-translate-y-0.5 dark:border-white/10 dark:bg-white/5" aria-label="Toggle theme">
@@ -191,7 +85,12 @@
           <p class="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-slate-400">Web Developer & Machine Learning Learner</p>
 
           <h1 class="max-w-3xl text-[2.2rem] font-black leading-[1.07] tracking-[-0.052em] sm:text-[2.85rem] md:text-[3.35rem] lg:text-[3.85rem]">
-            Hi, I’m <span class="relative inline-block">Your Name<span class="absolute -bottom-1 left-0 -z-10 h-3 w-full bg-acid/70 dark:bg-acid/30"></span></span>. I build web interfaces and explore <span class="inline-flex min-w-[12ch] text-ink dark:text-acid"><span id="typingText">ML systems</span><span class="typing-cursor">|</span></span>
+            Hi, I’m <span class="relative inline-block">Andhika<span class="absolute -bottom-1 left-0 -z-10 h-3 w-full bg-acid/70 dark:bg-acid/30"></span></span>. I build web interfaces and 
+                <span class="text-[#6FBF2E] dark:text-acid">explore</span>
+                <span class="inline-flex min-w-[12ch] text-[#6FBF2E] dark:text-acid">
+                <span id="typingText">ML systems</span>
+                <span class="typing-cursor">|</span>
+            </span>
           </h1>
 
           <p class="mt-5 max-w-2xl text-[15px] leading-8 text-slate-600 dark:text-slate-300 md:text-base">
@@ -208,45 +107,50 @@
           </div>
         </div>
 
-        <div class="relative mx-auto w-full max-w-lg">
+        <div class="relative mx-auto w-full max-w-lg opacity-[0.92]">
           <div class="absolute -right-4 top-8 h-28 w-28 rounded-full bg-acid/45 blur-2xl"></div>
           <div class="absolute -bottom-5 -left-5 h-36 w-36 rounded-full bg-skySoft dark:bg-blue-500/10"></div>
 
-          <div class="hero-visual-grid relative overflow-hidden border border-line bg-white/60 p-6 shadow-card backdrop-blur dark:border-white/10 dark:bg-white/5 dark:shadow-darkSoft">
-            <div class="relative min-h-[390px]">
-              <div class="absolute left-4 top-5 max-w-[220px] border border-line bg-white p-4 shadow-card dark:border-white/10 dark:bg-[#0B1020]">
+          <div class="hero-visual-grid relative overflow-hidden p-6">
+            <div id="heroVisual" class="hero-visual-inner relative min-h-[390px]">
+
+                <svg id="connectorSvg" class="pointer-events-none absolute inset-0 z-0 h-full w-full" fill="none">
+                <path id="line1" class="connector-line" stroke="#B7FF3C" stroke-width="2" stroke-opacity=".65"/>
+                <path id="line2" class="connector-line" stroke="currentColor" stroke-width="2" stroke-opacity=".18"/>
+                <path id="line3" class="connector-line" stroke="#B7FF3C" stroke-width="2" stroke-opacity=".55"/>
+                </svg>
+
+                <div id="node1" class="node absolute left-4 top-5 z-10 max-w-[220px] border border-line bg-white p-4 shadow-card dark:border-white/10 dark:bg-[#0B1020]">
                 <p class="text-xs font-black uppercase tracking-[0.2em] text-slate-400">Current Focus</p>
                 <p class="mt-3 text-xl font-black tracking-[-0.04em]">Clean interface,<br>useful logic.</p>
-              </div>
+                </div>
 
-              <div class="node absolute right-4 top-20 w-[190px] border border-line bg-ink p-4 text-white shadow-card dark:border-white/10 dark:bg-black">
+                <div id="node2" class="node absolute right-4 top-20 z-10 w-[190px] border border-line bg-ink p-4 text-white shadow-card dark:border-white/10 dark:bg-black">
                 <p class="text-xs text-white/40">Web Stack</p>
                 <p class="mt-2 font-black">Laravel · JS · MySQL</p>
-              </div>
+                </div>
 
-              <div class="node absolute bottom-24 left-10 w-[180px] bg-acid p-4 text-ink shadow-card">
+                <div id="node3" class="node absolute bottom-24 left-10 z-10 w-[180px] bg-acid p-4 text-ink shadow-card">
                 <p class="text-xs font-black uppercase tracking-[0.18em] text-ink/55">Exploring</p>
                 <p class="mt-2 font-black">ML + creative web</p>
-              </div>
+                </div>
 
-              <div class="node absolute bottom-5 right-8 w-[210px] border border-line bg-white p-4 shadow-card dark:border-white/10 dark:bg-[#0B1020]">
+                <div id="node4" class="node absolute bottom-5 right-8 z-10 w-[210px] border border-line bg-white p-4 shadow-card dark:border-white/10 dark:bg-[#0B1020]">
                 <p class="text-xs font-black uppercase tracking-[0.18em] text-slate-400">Design note</p>
-                <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">Simple on the surface, thoughtful in the flow.</p>
-              </div>
+                <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
+                    Simple on the surface, thoughtful in the flow.
+                </p>
+                </div>
 
-              <svg class="absolute inset-0 h-full w-full" viewBox="0 0 520 390" fill="none">
-                <path d="M172 120 C260 92 298 117 334 153" stroke="currentColor" stroke-opacity="0.16" stroke-width="2" stroke-dasharray="6 8"/>
-                <path d="M176 274 C258 236 302 268 346 306" stroke="currentColor" stroke-opacity="0.16" stroke-width="2" stroke-dasharray="6 8"/>
-                <path d="M252 276 C275 225 307 190 350 165" stroke="#B7FF3C" stroke-opacity="0.65" stroke-width="2" stroke-dasharray="6 8"/>
-              </svg>
             </div>
-          </div>
+            </div>
+
         </div>
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="px-4 py-20 md:py-24">
+    <section id="about" class="section-accent accent-right px-4 py-20 md:py-24">
       <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.05fr_.95fr] lg:items-start">
         <div>
           <p class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-slate-400">About Me</p>
@@ -255,40 +159,59 @@
           </h2>
           <div class="mt-8 grid gap-6 md:grid-cols-2">
             <p class="text-base leading-8 text-slate-600 dark:text-slate-300 md:text-lg">
-              My main area is web development. I enjoy building interfaces that look clean, feel organized, and make users understand what they need to do without thinking too hard.
+              I focus on building web interfaces that feel clear, simple, and easy to use — where users can understand things without overthinking.
             </p>
             <p class="text-base leading-8 text-slate-600 dark:text-slate-300 md:text-lg">
-              Outside regular web apps, I also explore machine learning and creative interaction — especially ideas involving classification, computer vision, webcam, and browser-based experiments.
+              Along the way, I also explore machine learning and creative web experiments - especially ideas around computer vision and interactive browser-based tools.
             </p>
           </div>
         </div>
 
-        <div class="border-t border-line pt-6 dark:border-white/10 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
-          <div class="grid gap-7">
-            <div class="grid grid-cols-[44px_1fr] gap-4">
-              <p class="text-3xl font-black tracking-[-0.05em] text-slate-300 dark:text-white/20">01</p>
-              <div><h3 class="font-black">Build</h3><p class="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">Web pages, CRUD apps, dashboards, and landing pages.</p></div>
+        <div class="lg:pl-10 lg:mt-[2.1rem]">
+            <div class="space-y-8">
+
+                <div class="flex gap-4">
+                <span class="text-4xl font-black text-acid">01</span>
+                <div>
+                    <h3 class="font-black text-lg">Build</h3>
+                    <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                    Web pages, CRUD apps, dashboards, and landing pages.
+                    </p>
+                </div>
+                </div>
+
+                <div class="flex gap-4">
+                <span class="text-4xl font-black text-acid">02</span>
+                <div>
+                    <h3 class="font-black text-lg">Learn</h3>
+                    <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                    ML concepts, model evaluation, and experiments.
+                    </p>
+                </div>
+                </div>
+
+                <div class="flex gap-4">
+                <span class="text-4xl font-black text-acid">03</span>
+                <div>
+                    <h3 class="font-black text-lg">Refine</h3>
+                    <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                    UI, spacing, interaction, and usability.
+                    </p>
+                </div>
+                </div>
+
             </div>
-            <div class="grid grid-cols-[44px_1fr] gap-4">
-              <p class="text-3xl font-black tracking-[-0.05em] text-slate-300 dark:text-white/20">02</p>
-              <div><h3 class="font-black">Learn</h3><p class="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">ML concepts, model evaluation, and practical experiments.</p></div>
             </div>
-            <div class="grid grid-cols-[44px_1fr] gap-4">
-              <p class="text-3xl font-black tracking-[-0.05em] text-slate-300 dark:text-white/20">03</p>
-              <div><h3 class="font-black">Refine</h3><p class="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">UI details, copy, spacing, interaction, and usability.</p></div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
     <!-- SKILLS -->
-    <section id="skills" class="px-4 py-20 md:py-24">
+    <section id="skills" class="section-accent accent-left px-4 py-20 md:py-24">
       <div class="mx-auto max-w-6xl">
         <div class="mb-10 max-w-2xl">
           <p class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-slate-400">Skills</p>
-          <h2 class="text-3xl font-black tracking-[-0.045em] md:text-5xl">Tools I use when building.</h2>
-          <p class="mt-4 leading-7 text-slate-600 dark:text-slate-300">A practical stack for building interfaces, web systems, and small machine learning experiments.</p>
+          <h2 class="text-3xl font-black tracking-[-0.045em] md:text-5xl">Tools I use.</h2>
+          <p class="mt-4 leading-7 text-slate-600 dark:text-slate-300">Used to build interfaces, systems, and small experiments.</p>
         </div>
 
         <div class="flex flex-wrap gap-3">
@@ -309,123 +232,242 @@
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="px-4 py-20 md:py-24">
+    <section id="projects" class="section-accent accent-right px-4 py-20 md:py-24">
       <div class="mx-auto max-w-6xl">
         <div class="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div>
             <p class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-slate-400">Projects</p>
-            <h2 class="text-3xl font-black tracking-[-0.045em] md:text-5xl">Some things I’ve been shaping.</h2>
+            <h2 class="text-3xl font-black tracking-[-0.045em] md:text-5xl">A few things I’ve built.</h2>
           </div>
-          <p class="max-w-md leading-7 text-slate-600 dark:text-slate-300">A small collection of web, dashboard, and machine learning projects. Replace the images with your own screenshots later.</p>
         </div>
 
-        <div class="grid gap-6 md:grid-cols-2">
-          <article class="project-card overflow-hidden rounded-[2rem] border border-line bg-white shadow-card dark:border-white/10 dark:bg-white/5 dark:shadow-darkSoft">
-            <div class="project-cover relative overflow-hidden">
-              <img class="aspect-[16/9] w-full object-cover" src="assets/project1.png" alt="Project screenshot">
-              <div class="absolute bottom-5 left-5 right-5 z-10">
-                <p class="text-xs font-black uppercase tracking-[0.18em] text-acid">Web App</p>
-                <h3 class="mt-2 text-3xl font-black tracking-[-0.045em] text-white">Looqi Studio</h3>
-              </div>
-              <div class="project-actions absolute right-5 top-5 z-10 flex gap-2">
-                <a href="https://github.com/andhikkadd/looqistudio" class="grid h-10 w-10 place-items-center rounded-full bg-white text-ink shadow-card"><i class="devicon-github-original"></i></a>
-                <a href="https://looqi.netlify.app" class="grid h-10 w-10 place-items-center rounded-full bg-white text-ink shadow-card">↗</a>
-              </div>
-            </div>
-            <div class="p-6">
-              <p class="leading-7 text-slate-600 dark:text-slate-300">A real-time webcam interaction built around face tracking and dynamic visual overlays.</p>
-              <div class="mt-5 flex flex-wrap gap-2 text-xs font-bold text-slate-500 dark:text-slate-300">
-                <span class="rounded-full bg-soft px-3 py-1.5 dark:bg-white/10">p5.js</span><span class="rounded-full bg-soft px-3 py-1.5 dark:bg-white/10">ml5.js</span><span class="rounded-full bg-soft px-3 py-1.5 dark:bg-white/10">Webcam</span>
-              </div>
-            </div>
-          </article>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 
-          <article class="project-card overflow-hidden rounded-[2rem] border border-line bg-white shadow-card dark:border-white/10 dark:bg-white/5 dark:shadow-darkSoft md:translate-y-10">
-            <div class="project-cover relative overflow-hidden">
-              <img class="aspect-[16/9] w-full object-cover" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="Project screenshot">
-              <div class="absolute bottom-5 left-5 right-5 z-10">
-                <p class="text-xs font-black uppercase tracking-[0.18em] text-acid">Fullstack</p>
-                <h3 class="mt-2 text-3xl font-black tracking-[-0.045em] text-white">Food Ordering Web App</h3>
-              </div>
-              <div class="project-actions absolute right-5 top-5 z-10 flex gap-2">
-                <a href="#" class="grid h-10 w-10 place-items-center rounded-full bg-white text-ink shadow-card"><i class="devicon-github-original"></i></a>
-                <a href="#" class="grid h-10 w-10 place-items-center rounded-full bg-white text-ink shadow-card">↗</a>
-              </div>
-            </div>
-            <div class="p-6">
-              <p class="leading-7 text-slate-600 dark:text-slate-300">Fullstack development concept using Laravel and MySQL for order management flow.</p>
-              <div class="mt-5 flex flex-wrap gap-2 text-xs font-bold text-slate-500 dark:text-slate-300">
-                <span class="rounded-full bg-soft px-3 py-1.5 dark:bg-white/10">Laravel</span><span class="rounded-full bg-soft px-3 py-1.5 dark:bg-white/10">MySQL</span><span class="rounded-full bg-soft px-3 py-1.5 dark:bg-white/10">UI Design</span>
-              </div>
-            </div>
-          </article>
+            <article class="project-card group overflow-hidden rounded-[2rem] border border-line bg-white shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-white/10 dark:bg-white/5 dark:shadow-darkSoft">
+                <div class="project-cover relative overflow-hidden">
+                    <img
+                    class="aspect-[16/9] w-full object-cover transition duration-500 group-hover:scale-105"
+                    src="assets/project1.png"
+                    alt="Project screenshot"
+                    />
 
-          <article class="project-card overflow-hidden rounded-[2rem] border border-line bg-white shadow-card dark:border-white/10 dark:bg-white/5 dark:shadow-darkSoft md:col-span-2 md:grid md:grid-cols-[1.1fr_.9fr]">
-            <div class="project-cover relative overflow-hidden">
-              <img class="h-full min-h-[320px] w-full object-cover" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="Project screenshot">
-              <div class="project-actions absolute right-5 top-5 z-10 flex gap-2">
-                <a href="#" class="grid h-10 w-10 place-items-center rounded-full bg-white text-ink shadow-card"><i class="devicon-github-original"></i></a>
-                <a href="#" class="grid h-10 w-10 place-items-center rounded-full bg-white text-ink shadow-card">↗</a>
-              </div>
-            </div>
-            <div class="p-8">
-              <p class="text-xs font-black uppercase tracking-[0.18em] text-slate-400">Machine Learning</p>
-              <h3 class="mt-3 text-3xl font-black tracking-[-0.045em]">ML Algorithm Comparison</h3>
-              <p class="mt-4 leading-8 text-slate-600 dark:text-slate-300">A model evaluation workflow comparing several classification algorithms using metrics and ranking-based decision support.</p>
-              <div class="mt-6 flex flex-wrap gap-2 text-xs font-bold text-slate-500 dark:text-slate-300">
-                <span class="rounded-full bg-soft px-3 py-1.5 dark:bg-white/10">Python</span><span class="rounded-full bg-soft px-3 py-1.5 dark:bg-white/10">Scikit-learn</span><span class="rounded-full bg-soft px-3 py-1.5 dark:bg-white/10">TOPSIS</span>
-              </div>
-            </div>
-          </article>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+                    <div class="absolute bottom-5 left-5 right-5 z-10">
+                    <p class="text-xs font-black uppercase tracking-[0.18em] text-acid">
+                        Web App
+                    </p>
+                    <h3 class="mt-2 text-3xl font-black tracking-[-0.045em] text-white">
+                        Looqi Studio
+                    </h3>
+                    </div>
+
+                    <div class="project-actions absolute right-5 top-5 z-10 flex gap-2">
+                    <a
+                        href="https://github.com/andhikkadd/looqistudio"
+                        target="_blank"
+                        class="grid h-10 w-10 place-items-center rounded-full bg-white text-ink shadow-card transition hover:scale-105 hover:bg-acid"
+                        aria-label="View GitHub"
+                    >
+                        <i class="devicon-github-original"></i>
+                    </a>
+
+                    <a
+                        href="https://looqi.netlify.app"
+                        target="_blank"
+                        class="grid h-10 w-10 place-items-center rounded-full bg-white text-ink shadow-card transition hover:scale-105 hover:bg-acid"
+                        aria-label="View live project"
+                    >
+                        ↗
+                    </a>
+                    </div>
+                </div>
+
+                <div class="p-6">
+                    <p class="leading-7 text-slate-600 dark:text-slate-300">
+                    A real-time webcam interaction built around face tracking and dynamic visual overlays.
+                    </p>
+
+                    <div class="mt-5 flex flex-wrap gap-2 text-xs font-bold text-slate-500 dark:text-slate-300">
+                    <span class="rounded-full bg-soft px-3 py-1.5 dark:bg-white/10">p5.js</span>
+                    <span class="rounded-full bg-soft px-3 py-1.5 dark:bg-white/10">ml5.js</span>
+                    <span class="rounded-full bg-soft px-3 py-1.5 dark:bg-white/10">Webcam</span>
+                    </div>
+                </div>
+            </article>
+            <article class="project-card group overflow-hidden rounded-[2rem] border border-line bg-white shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-white/10 dark:bg-white/5 dark:shadow-darkSoft">
+                <div class="project-cover relative overflow-hidden">
+                    <img
+                    class="aspect-[16/9] w-full object-cover transition duration-500 group-hover:scale-105"
+                    src="assets/project1.png"
+                    alt="Project screenshot"
+                    />
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+                    <div class="absolute bottom-5 left-5 right-5 z-10">
+                    <p class="text-xs font-black uppercase tracking-[0.18em] text-acid">
+                        Web App
+                    </p>
+                    <h3 class="mt-2 text-3xl font-black tracking-[-0.045em] text-white">
+                        Looqi Studio
+                    </h3>
+                    </div>
+
+                    <div class="project-actions absolute right-5 top-5 z-10 flex gap-2">
+                    <a
+                        href="https://github.com/andhikkadd/looqistudio"
+                        target="_blank"
+                        class="grid h-10 w-10 place-items-center rounded-full bg-white text-ink shadow-card transition hover:scale-105 hover:bg-acid"
+                        aria-label="View GitHub"
+                    >
+                        <i class="devicon-github-original"></i>
+                    </a>
+
+                    <a
+                        href="https://looqi.netlify.app"
+                        target="_blank"
+                        class="grid h-10 w-10 place-items-center rounded-full bg-white text-ink shadow-card transition hover:scale-105 hover:bg-acid"
+                        aria-label="View live project"
+                    >
+                        ↗
+                    </a>
+                    </div>
+                </div>
+
+                <div class="p-6">
+                    <p class="leading-7 text-slate-600 dark:text-slate-300">
+                    A real-time webcam interaction built around face tracking and dynamic visual overlays.
+                    </p>
+
+                    <div class="mt-5 flex flex-wrap gap-2 text-xs font-bold text-slate-500 dark:text-slate-300">
+                    <span class="rounded-full bg-soft px-3 py-1.5 dark:bg-white/10">p5.js</span>
+                    <span class="rounded-full bg-soft px-3 py-1.5 dark:bg-white/10">ml5.js</span>
+                    <span class="rounded-full bg-soft px-3 py-1.5 dark:bg-white/10">Webcam</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card group overflow-hidden rounded-[2rem] border border-line bg-white shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-white/10 dark:bg-white/5 dark:shadow-darkSoft">
+                <div class="project-cover relative overflow-hidden">
+                    <img
+                    class="aspect-[16/9] w-full object-cover transition duration-500 group-hover:scale-105"
+                    src="assets/project1.png"
+                    alt="Project screenshot"
+                    />
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+                    <div class="absolute bottom-5 left-5 right-5 z-10">
+                    <p class="text-xs font-black uppercase tracking-[0.18em] text-acid">
+                        Web App
+                    </p>
+                    <h3 class="mt-2 text-3xl font-black tracking-[-0.045em] text-white">
+                        Looqi Studio
+                    </h3>
+                    </div>
+
+                    <div class="project-actions absolute right-5 top-5 z-10 flex gap-2">
+                    <a
+                        href="https://github.com/andhikkadd/looqistudio"
+                        target="_blank"
+                        class="grid h-10 w-10 place-items-center rounded-full bg-white text-ink shadow-card transition hover:scale-105 hover:bg-acid"
+                        aria-label="View GitHub"
+                    >
+                        <i class="devicon-github-original"></i>
+                    </a>
+
+                    <a
+                        href="https://looqi.netlify.app"
+                        target="_blank"
+                        class="grid h-10 w-10 place-items-center rounded-full bg-white text-ink shadow-card transition hover:scale-105 hover:bg-acid"
+                        aria-label="View live project"
+                    >
+                        ↗
+                    </a>
+                    </div>
+                </div>
+
+                <div class="p-6">
+                    <p class="leading-7 text-slate-600 dark:text-slate-300">
+                    A real-time webcam interaction built around face tracking and dynamic visual overlays.
+                    </p>
+
+                    <div class="mt-5 flex flex-wrap gap-2 text-xs font-bold text-slate-500 dark:text-slate-300">
+                    <span class="rounded-full bg-soft px-3 py-1.5 dark:bg-white/10">p5.js</span>
+                    <span class="rounded-full bg-soft px-3 py-1.5 dark:bg-white/10">ml5.js</span>
+                    <span class="rounded-full bg-soft px-3 py-1.5 dark:bg-white/10">Webcam</span>
+                    </div>
+                </div>
+            </article>
+
         </div>
       </div>
     </section>
 
     <!-- CERTIFICATES -->
-    <section id="certificates" class="px-4 py-20 md:py-24">
+    <section id="certificates" class="section-accent accent-left px-4 py-20 md:py-24">
       <div class="mx-auto max-w-6xl">
         <div class="mb-10 max-w-2xl">
           <p class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-slate-400">Certificates</p>
           <h2 class="text-3xl font-black tracking-[-0.045em] md:text-5xl">Learning snapshots.</h2>
-          <p class="mt-4 leading-7 text-slate-600 dark:text-slate-300">A few records from courses, practice, and learning paths I’ve completed.</p>
+          <p class="mt-4 leading-7 text-slate-600 dark:text-slate-300">A record of what I’ve explored.</p>
         </div>
 
-        <div class="grid gap-5 md:grid-cols-3">
-          <button class="cert-card open-cert relative min-h-[300px] overflow-hidden rounded-[1.8rem] text-left shadow-card" data-img="assets/sertifikat1.jpg" data-title="Machine Learning Fundamentals">
-            <img class="absolute inset-0 h-full w-full object-cover" src="assets/sertifikat1.jpg" alt="Certificate">
-            <div class="relative z-10 flex h-full min-h-[300px] flex-col justify-end p-6 text-white">
-              <p class="text-xs font-black uppercase tracking-[0.18em] text-acid">Google</p>
-              <h3 class="mt-2 text-2xl font-black tracking-[-0.04em]">Machine Learning Fundamentals</h3>
-            </div>
-          </button>
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <button 
+                class="cert-card open-cert group relative overflow-hidden rounded-2xl cursor-pointer"
+                data-img="assets/sertifikat1.jpg"
+                >
+                <img class="h-[260px] w-full object-cover" src="assets/sertifikat1.jpg" alt="Certificate"/>
+                
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
 
-          <button class="cert-card open-cert relative min-h-[300px] overflow-hidden rounded-[1.8rem] text-left shadow-card md:translate-y-8" data-img="assets/sertifikat1.jpg" data-title="Frontend Web Development">
-            <img class="absolute inset-0 h-full w-full object-cover" src="assets/sertifikat1.jpg" alt="Certificate">
-            <div class="relative z-10 flex h-full min-h-[300px] flex-col justify-end p-6 text-white">
-              <p class="text-xs font-black uppercase tracking-[0.18em] text-acid">Course</p>
-              <h3 class="mt-2 text-2xl font-black tracking-[-0.04em]">Frontend Web Development</h3>
-            </div>
-          </button>
+                <div class="absolute bottom-4 left-4 right-4 text-white">
+                    <p class="text-xs text-acid font-bold">Google</p>
+                    <h3 class="text-lg font-bold">Machine Learning</h3>
+                </div>
+            </button>
 
-          <button class="cert-card open-cert relative min-h-[300px] overflow-hidden rounded-[1.8rem] text-left shadow-card" data-img="assets/sertifikat1.jpg" data-title="Creative Coding">
-            <img class="absolute inset-0 h-full w-full object-cover" src="assets/sertifikat1.jpg" alt="Certificate">
-            <div class="relative z-10 flex h-full min-h-[300px] flex-col justify-end p-6 text-white">
-              <p class="text-xs font-black uppercase tracking-[0.18em] text-acid">Practice</p>
-              <h3 class="mt-2 text-2xl font-black tracking-[-0.04em]">Creative Coding</h3>
-            </div>
-          </button>
+            <button 
+                class="cert-card open-cert group relative overflow-hidden rounded-2xl cursor-pointer"
+                data-img="assets/sertifikat1.jpg"
+                >
+                <img class="h-[260px] w-full object-cover" src="assets/sertifikat1.jpg" alt="Certificate"/>
+                
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+
+                <div class="absolute bottom-4 left-4 right-4 text-white">
+                    <p class="text-xs text-acid font-bold">Google</p>
+                    <h3 class="text-lg font-bold">Machine Learning</h3>
+                </div>
+            </button>
+
+            <button 
+                class="cert-card open-cert group relative overflow-hidden rounded-2xl cursor-pointer"
+                data-img="assets/sertifikat1.jpg"
+                >
+                <img class="h-[260px] w-full object-cover" src="assets/sertifikat1.jpg" alt="Certificate"/>
+                
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+
+                <div class="absolute bottom-4 left-4 right-4 text-white">
+                    <p class="text-xs text-acid font-bold">Google</p>
+                    <h3 class="text-lg font-bold">Machine Learning</h3>
+                </div>
+            </button>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="px-4 py-20 md:py-24">
+    <section id="contact" class="section-accent accent-right px-4 py-20 md:py-24">
       <div class="mx-auto max-w-6xl border-t border-line pt-12 dark:border-white/10">
         <div class="grid gap-10 lg:grid-cols-[.9fr_1.1fr]">
           <div>
             <p class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-slate-400">Contact</p>
-            <h2 class="max-w-xl text-4xl font-black leading-tight tracking-[-0.05em] md:text-6xl">Got an idea? Let’s make it clearer.</h2>
-            <p class="mt-5 max-w-lg leading-8 text-slate-600 dark:text-slate-300">I’m open to web projects, portfolio ideas, UI experiments, or anything that needs a clean and usable digital interface.</p>
+            <h2 class="max-w-xl text-4xl font-black leading-tight tracking-[-0.05em] md:text-6xl">Got an idea? Let’s build it together.</h2>
+            <p class="mt-5 max-w-lg leading-8 text-slate-600 dark:text-slate-300">I’m open to web projects, ideas, and collaborations. If you have something you want to build or explore, feel free to reach out.</p>
 
             <div class="mt-8 flex flex-wrap gap-3">
               <a href="mailto:yourmail@example.com" class="inline-flex items-center gap-2 border border-line bg-white px-5 py-3 text-sm font-bold transition hover:-translate-y-1 hover:border-ink dark:border-white/10 dark:bg-white/5 dark:hover:border-acid"><span>@</span> yourmail@example.com</a>
@@ -475,7 +517,7 @@
     menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
     document.querySelectorAll('#mobileMenu a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
 
-    const words = ['ML systems', 'clean dashboards', 'creative web tools', 'smart interfaces'];
+    const words = ['ML systems.', 'clean dashboards.', 'creative web tools.', 'smart interfaces.'];
     const typingText = document.getElementById('typingText');
     let wordIndex = 0;
     let charIndex = words[0].length;
@@ -525,6 +567,74 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') lightbox.classList.remove('show');
     });
+
+    const visual = document.getElementById('heroVisual');
+    const nodes = {
+    n1: document.getElementById('node1'),
+    n2: document.getElementById('node2'),
+    n3: document.getElementById('node3'),
+    n4: document.getElementById('node4')
+    };
+
+    const lines = [
+    { el: document.getElementById('line1'), from: nodes.n1, to: nodes.n2, bend: -70 },
+    { el: document.getElementById('line2'), from: nodes.n2, to: nodes.n3, bend: 90 },
+    { el: document.getElementById('line3'), from: nodes.n3, to: nodes.n4, bend: -65 }
+    ];
+
+    function centerOf(el) {
+    const box = el.getBoundingClientRect();
+    const parent = visual.getBoundingClientRect();
+
+    return {
+        x: box.left - parent.left + box.width / 2,
+        y: box.top - parent.top + box.height / 2
+    };
+    }
+
+    function drawConnectors() {
+        lines.forEach(({ el, from, to }, index) => {
+            const a = centerOf(from);
+            const b = centerOf(to);
+
+            const dx = b.x - a.x;
+            const distance = Math.abs(dx);
+
+            const arcHeight = Math.min(120, Math.max(60, distance * 0.42));
+            const direction = index % 2 === 0 ? -1 : 1;
+
+            const c1x = a.x + dx * 0.25;
+            const c2x = a.x + dx * 0.75;
+
+            const c1y = a.y + direction * arcHeight;
+            const c2y = b.y + direction * arcHeight;
+
+            el.setAttribute(
+            'd',
+            `M ${a.x} ${a.y} C ${c1x} ${c1y}, ${c2x} ${c2y}, ${b.x} ${b.y}`
+            );
+        });
+
+        requestAnimationFrame(drawConnectors);
+    }
+
+    drawConnectors();
+
+    const blobs = document.querySelectorAll('.ambient-blob');
+
+    document.addEventListener('mousemove', (e) => {
+    const x = e.clientX / window.innerWidth;
+    const y = e.clientY / window.innerHeight;
+
+    blobs.forEach((blob, i) => {
+        const speed = (i + 1) * 10;
+
+        blob.style.transform = `
+        translate(${x * speed}px, ${y * speed}px)
+        `;
+    });
+    });
+
   </script>
 </body>
 </html>
